@@ -9,6 +9,14 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
 	<link rel="stylesheet" href="assets/style.css">
 	<title>Learning</title>
+
+    <!--<script>
+        function () {
+            if ($("button").click === true) {
+                localStorage;
+            }
+        }
+    </script>-->
 </head>
 
 <body>
@@ -23,7 +31,7 @@
                     </button>
 					<div class="collapse navbar-collapse" id="navbarSupportedContent">
 						<ul class="navbar-nav mr-auto">
-							<li class="nav-item active">
+							<li class="nav-item">
 								<a class="nav-link" href="#"> <i class="fa fa-home"
                                 aria-hidden="true"></i></a>
 							</li>
@@ -37,7 +45,10 @@
 							</li>
 						</ul>
 					</div>
-					<button type="button" class="btn btn-light">Dark Mode</button>
+					<div class="custom-control custom-switch">
+                        <input type="checkbox" class="custom-control-input" id="customSwitch1">
+                        <label class="custom-control-label" for="customSwitch1">Dark Mode</label>
+                    </div>
 				</nav>
 			</div>
 		</div>

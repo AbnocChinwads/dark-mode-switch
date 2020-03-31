@@ -1,12 +1,11 @@
-$(document).ready(function () {
-    $("button").on("click", function () {
+$(document).ready(function() {
+    $(document).on("change", "#customSwitch1", function darkMode() {
         $("body").toggleClass("body-dark");
         $("nav").toggleClass("navbar-dark bg-dark");
-        $(this).toggleClass("btn-dark");
-        $(this).text(function(i, text){
-          return text === "Light Mode" ? "Dark Mode" : "Light Mode";
+        $("label").text(function(i, text){
+          return text === "Dark Mode" ? "Light Mode" : "Dark Mode";
         })
         $("footer").toggleClass("footer-dark");
         $("a").toggleClass("anchor-styling-dark");
-    })
-});
+    });
+})
