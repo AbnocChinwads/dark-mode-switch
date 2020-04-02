@@ -1,11 +1,38 @@
 $(document).ready(function() {
-    $(document).on("change", "#customSwitch1", function darkMode() {
+    $("#customSwitch1").change(function darkMode() {
         $("body").toggleClass("body-dark");
         $("nav").toggleClass("navbar-dark bg-dark");
         $("label").text(function(i, text){
-          return text === "Dark Mode" ? "Light Mode" : "Dark Mode";
+            return text === "Dark Mode" ? "Light Mode" : "Dark Mode";
         })
         $("footer").toggleClass("footer-dark");
-        $("a").toggleClass("anchor-styling-dark");
+        $("a").toggleClass("anchor-styling-dark");      
     });
 })
+
+/*var themeSwitch = document.getElementById('themeSwitch');
+if(themeSwitch) {
+  initTheme(); // on page load, if user has already selected a specific theme -> apply it
+
+  themeSwitch.addEventListener('change', function(event){
+    resetTheme(); // update color theme
+  });
+
+  function initTheme() {
+    var darkThemeSelected = (localStorage.getItem('themeSwitch') !== null && localStorage.getItem('themeSwitch') === 'dark');
+    // update checkbox
+    themeSwitch.checked = darkThemeSelected;
+    // update body data-theme attribute
+    darkThemeSelected ? document.body.setAttribute('data-theme', 'dark') : document.body.removeAttribute('data-theme');
+  };
+
+  function resetTheme() {
+    if(themeSwitch.checked) { // dark theme has been selected
+      document.body.setAttribute('data-theme', 'dark');
+      localStorage.setItem('themeSwitch', 'dark'); // save theme selection 
+    } else {
+      document.body.removeAttribute('data-theme');
+      localStorage.removeItem('themeSwitch'); // reset theme selection 
+    } 
+  };
+}*/
