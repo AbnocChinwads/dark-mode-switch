@@ -1,38 +1,26 @@
-$(document).ready(function() {
-    $("#customSwitch1").change(function darkMode() {
-        $("body").toggleClass("body-dark");
-        $("nav").toggleClass("navbar-dark bg-dark");
-        $("label").text(function(i, text){
-            return text === "Dark Mode" ? "Light Mode" : "Dark Mode";
-        })
-        $("footer").toggleClass("footer-dark");
-        $("a").toggleClass("anchor-styling-dark");      
-    });
-})
+var darkMode = localStorage.getItem("darkmode");
 
-/*var themeSwitch = document.getElementById('themeSwitch');
-if(themeSwitch) {
-  initTheme(); // on page load, if user has already selected a specific theme -> apply it
+if(darkMode) {
+    $('#customSwitch1').prop("checked", true);
+    $("body").toggleClass("body-dark");
+    $("nav").toggleClass("navbar-dark bg-dark");
+    $("label").text(function(i, text){
+        return text === "Dark Mode" ? "Light Mode" : "Dark Mode";
+    })
+    $("footer").toggleClass("footer-dark");
+    $("a").toggleClass("anchor-styling-dark");
+}
 
-  themeSwitch.addEventListener('change', function(event){
-    resetTheme(); // update color theme
-  });
+$("#customSwitch1").change(function() {
+    darkMode = !darkMode;
+    if (darkMode) localStorage.setItem("darkmode", "1");
+    else localStorage.removeItem("darkmode");
 
-  function initTheme() {
-    var darkThemeSelected = (localStorage.getItem('themeSwitch') !== null && localStorage.getItem('themeSwitch') === 'dark');
-    // update checkbox
-    themeSwitch.checked = darkThemeSelected;
-    // update body data-theme attribute
-    darkThemeSelected ? document.body.setAttribute('data-theme', 'dark') : document.body.removeAttribute('data-theme');
-  };
-
-  function resetTheme() {
-    if(themeSwitch.checked) { // dark theme has been selected
-      document.body.setAttribute('data-theme', 'dark');
-      localStorage.setItem('themeSwitch', 'dark'); // save theme selection 
-    } else {
-      document.body.removeAttribute('data-theme');
-      localStorage.removeItem('themeSwitch'); // reset theme selection 
-    } 
-  };
-}*/
+    $("body").toggleClass("body-dark", darkMode);
+    $("nav").toggleClass("navbar-dark bg-dark", darkMode);
+    $("label").text(function(i, text){
+        return text === "Dark Mode" ? "Light Mode" : "Dark Mode";
+    })
+    $("footer").toggleClass("footer-dark", darkMode);
+    $("a").toggleClass("anchor-styling-dark", darkMode);
+});
