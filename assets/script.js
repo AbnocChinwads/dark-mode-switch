@@ -1,7 +1,7 @@
 var darkMode = localStorage.getItem("darkmode");
 
 if(darkMode) {
-    $('#customSwitch1').prop("checked", true);
+    $('#darkModeSwitch').prop("checked", true);
     $("body").toggleClass("body-dark");
     $("nav").toggleClass("navbar-dark bg-dark");
     $("label").text(function(i, text){
@@ -11,7 +11,7 @@ if(darkMode) {
     $("a").toggleClass("anchor-styling-dark");
 }
 
-$("#customSwitch1").change(function() {
+$("#darkModeSwitch").change(function() {
     darkMode = !darkMode;
     if (darkMode) localStorage.setItem("darkmode", "1");
     else localStorage.removeItem("darkmode");
