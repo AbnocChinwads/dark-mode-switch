@@ -55,3 +55,28 @@ footer {
     padding: 0.5em;
     color: #daa520;
 }
+
+/*--------------------------------------------------------- Media Queries*/
+
+@media (prefers-color-scheme: dark) {
+    
+    .body-dark {
+    background-color: #343a40;
+    color: #daa520;
+    }
+
+    .footer-dark {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: #343a40;
+        color: #daa520;
+        text-align: center;
+    }
+
+    .anchor-styling-dark {
+        padding: 0.5em;
+        color: #daa520;
+    }
+}

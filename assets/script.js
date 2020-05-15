@@ -1,7 +1,7 @@
 var darkMode = localStorage.getItem("darkmode");
 
 if(darkMode) {
-    $('#darkModeSwitch').prop("checked", true);
+    $("#darkModeSwitch").prop("checked", true);
     $("body").toggleClass("body-dark");
     $("nav").toggleClass("navbar-dark bg-dark");
     $("label").text(function(i, text){
