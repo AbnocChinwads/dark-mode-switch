@@ -21,13 +21,19 @@ body {
 /*--------------------------------------------------------- Switch*/
 
 .custom-control-input:checked ~ .custom-control-label::before {
-    color: #000;
     background-color: #fff;
 }
 
 .custom-control-input ~ .custom-control-label::before {
-    color: #fff;
     background-color: #000;
+}
+
+.custom-control-input ~ .custom-control-label::after {
+    background-color: #fff;
+}
+
+.custom-control-input:checked ~ .custom-control-label::after {
+    background-color: #000 !important;
 }
 
 /*--------------------------------------------------------- Footer*/
